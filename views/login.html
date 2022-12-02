@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="/static/icons/bootstrap-icons-1.10.2/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/static/icons/fontawesome-free/css/all.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="/static/img/logo-dumbways.png"
+      type="image/x-icon"
+    />
+    <title>Task 12 DumbWays - asidikrdn</title>
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg px-2 px-lg-5 py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/static/img/logo-dumbways.png"
+            alt="logo-dumbways"
+            id="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 fw-bolder fs-5">
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            {{if .LoginState.IsLogin}}
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/project">Add Project</a>
+            </li>
+            {{end}}
+          </ul>
+          <ul
+            class="navbar-nav w-100 fw-bolder fs-5 d-lg-flex justify-content-end align-items-center d-block"
+          >
+            {{if .LoginState.IsLogin}}
+            <li class="nav-item mx-3">
+              <small class="my-0 lead d-none d-lg-block">
+                Hello, {{.LoginState.UserName}}
+              </small>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/logout"> Logout </a>
+            </li>
+            {{else}}
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/register"> Register </a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="/login"> Login </a>
+            </li>
+            {{end}}
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link fs-6 btn btn-dark text-white py-2 px-3 rounded-3"
+                href="/contact"
+              >
+                Contact Me
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of NavBar -->
+
+    <main>
+      <section
+        id="project-form"
+        class="d-flex align-items-center"
+        style="height: 80vh"
+      >
+        <div class="container my-4">
+          <h1 class="text-center py-3">LOGIN TO YOUR ACCOUNT</h1>
+          <div class="row">
+            <div class="col-10 offset-1 col-lg-6 offset-lg-3">
+              <form
+                id="contactForm"
+                class="w-100 mx-auto"
+                method="post"
+                action=""
+              >
+                <div class="mb-3">
+                  <label for="email" class="form-label h4">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    class="form-control"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label h4">Password</label>
+                  <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    class="form-control"
+                  />
+                </div>
+                <div class="w-100 d-flex justify-content-end">
+                  <button type="submit" class="btn btn-dark fs-5">
+                    submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
