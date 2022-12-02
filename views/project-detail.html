@@ -1,0 +1,159 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="/static/icons/bootstrap-icons-1.10.2/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/static/icons/fontawesome-free/css/all.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="/static/img/logo-dumbways.png"
+      type="image/x-icon"
+    />
+    <title>Task 9 DumbWays - asidikrdn</title>
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg px-2 px-lg-5 py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/static/img/logo-dumbways.png"
+            alt="logo-dumbways"
+            id="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 fw-bolder fs-5">
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/project"> Add Project </a>
+            </li>
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link fs-6 btn btn-dark text-white mt-2 py-2 px-3 rounded-3 d-inline-block d-lg-none"
+                href="/contact"
+              >
+                Contact Me
+              </a>
+            </li>
+          </ul>
+        </div>
+        <a
+          class="nav-link fs-6 btn btn-dark text-white py-2 px-3 rounded-3 d-none d-lg-block"
+          href="/contact"
+        >
+          Contact Me
+        </a>
+      </div>
+    </nav>
+    <!-- End of NavBar -->
+
+    <main>
+      <section id="project-detail">
+        <div class="container">
+          <a href="/" class="d-inline-block my-3">Kembali</a>
+          <h1 class="text-center mb-4" id="projectTitle">
+            {{.DataProject.ProjectName}}
+          </h1>
+          <div class="row">
+            <!-- Project Img -->
+            <div class="col-12 col-lg-7">
+              <img
+                src="/static/img/{{.DataProject.Img}}"
+                alt="Nama Project"
+                class="img-fluid"
+              />
+            </div>
+            <!-- End of Project Img -->
+
+            <!-- Project Detail -->
+            <div class="col-12 col-lg-5 ps-lg-4">
+              <!-- Duration -->
+              <div class="row">
+                <div class="col-12">
+                  <h2 class="title">Duration</h2>
+                </div>
+                <div class="col-12 ps-3">
+                  <p>
+                    <i class="bi bi-calendar3 me-2"></i> {{.DataProject.ShowDate
+                    .DataProject.StartDate}} - {{.DataProject.ShowDate
+                    .DataProject.EndDate}}
+                  </p>
+                  <p>
+                    <i class="bi bi-clock-fill me-2"></i>
+                    {{.DataProject.ShowDuration .DataProject.StartDate
+                    .DataProject.EndDate}}
+                  </p>
+                </div>
+              </div>
+              <!-- End of Duration -->
+              <!-- Tech -->
+              <div class="row mt-5">
+                <div class="col-12">
+                  <h2 class="title">Technologies</h2>
+                </div>
+                <div class="col-12 ps-3">
+                  <div class="row">
+                    {{range $indexTech, $tech := .DataProject.Tech}} {{if eq
+                    $tech "html5"}}
+                    <div class="col-6">
+                      <p class="fs-3">
+                        <i class="fa-brands fa-html5 me-2"></i>HTML 5
+                      </p>
+                    </div>
+                    {{else if eq $tech "css3"}}
+                    <div class="col-6">
+                      <p class="fs-3">
+                        <i class="fa-brands fa-css3 me-2"></i>CSS 3
+                      </p>
+                    </div>
+                    {{else if eq $tech "js"}}
+                    <div class="col-6">
+                      <p class="fs-3">
+                        <i class="fa-brands fa-js me-2"></i>JavaScript
+                      </p>
+                    </div>
+                    {{else if eq $tech "react"}}
+                    <div class="col-6">
+                      <p class="fs-3">
+                        <i class="fa-brands fa-react me-2"></i>React JS
+                      </p>
+                    </div>
+                    {{end}} {{end}}
+                  </div>
+                </div>
+              </div>
+              <!-- End of Tech -->
+            </div>
+            <!-- End of Project Detail -->
+          </div>
+
+          <!-- Project Description -->
+          <div id="projectDesc" class="mt-5">
+            <p>{{.DataProject.ProjectDesc}}</p>
+          </div>
+          <!-- End of Project Description -->
+        </div>
+        <div class="project-img"></div>
+        <div class="project-detail"></div>
+        <div class="project-desc"></div>
+      </section>
+    </main>
+  </body>
+</html>
