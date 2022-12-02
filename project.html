@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Task 4 DumbWays - asidikrdn</title>
+  </head>
+  <body>
+    <nav>
+      <ul class="nav-item">
+        <li>
+          <img src="img/logo-dumbways.png" alt="logo-dumbways" id="logo" />
+        </li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="project.html" class="active">My Project</a></li>
+        <li class="contactme-button">
+          <a href="contact.html">
+            <button>Contact Me</button>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section id="project-form">
+        <h1 class="form-title">ADD MY PROJECT</h1>
+        <form id="projectForm" action="" class="form">
+          <label for="projectName">Project Name</label>
+          <input
+            type="text"
+            name="projectName"
+            class="text-input"
+            id="projectName"
+          />
+          <div class="date">
+            <label for="startDate">Start Date</label>
+            <input
+              type="date"
+              name="startDate"
+              class="text-input"
+              id="startDate"
+            />
+          </div>
+          <div class="date">
+            <label for="endDate">End Date</label>
+            <input type="date" name="endDate" class="text-input" id="endDate" />
+          </div>
+          <label for="projectDesc">Description</label>
+          <textarea
+            name="projectDesc"
+            id="projectDesc"
+            class="text-input"
+            cols="30"
+            rows="10"
+          ></textarea>
+          <label>Technologies</label>
+          <div class="checkbox-list">
+            <input type="checkbox" name="html" id="html" value="HTML 5" />
+            <label for="html">HTML 5</label>
+          </div>
+          <div class="checkbox-list">
+            <input type="checkbox" name="css" id="css" value="CSS 3" />
+            <label for="css">CSS 3</label>
+          </div>
+          <div class="checkbox-list">
+            <input
+              type="checkbox"
+              name="javascript"
+              id="javascript"
+              value="JavaScript"
+            />
+            <label for="javascript">JavaScript</label>
+          </div>
+          <div class="checkbox-list">
+            <input
+              type="checkbox"
+              name="reactjs"
+              id="reactjs"
+              value="React JS"
+            />
+            <label for="reactjs">React JS</label>
+          </div>
+          <label style="margin-top: 20px">Upload Image</label>
+          <div class="input-img-group">
+            <label for="projectImg" style="margin-top: 20px">
+              <p>Choose File</p>
+              <img src="img/file.png" alt="file" />
+            </label>
+            <input type="file" name="projectImg" id="projectImg" />
+          </div>
+          <div class="submit-button">
+            <button type="submit">submit</button>
+          </div>
+        </form>
+      </section>
+      <section id="project-list">
+        <h1>My Project</h1>
+        <div class="row" id="projectListRow">
+          <!-- <div class="card">
+            <div class="card-img">
+              <img
+                src="img/mini-expense-tracker.png"
+                alt="Mini Expense Tracker"
+              />
+            </div>
+            <div class="card-title">
+              <h3>Mini Expense Tracker</h3>
+              <small>Durasi : 3 Bulan</small>
+            </div>
+            <div class="card-body">
+              <p>
+                "Expense Tracker" merujuk ke sistem pencatatan pengeluaran,
+                aplikasi ini akan menyimpan pemasukan dan pengeluaran user serta
+                menampilkan total selisih antara keduanya.
+              </p>
+            </div>
+            <div class="tech-icon">
+              <img src="img/html5.png" alt="HTML 5" />
+              <img src="img/css3.png" alt="CSS 3" />
+              <img src="img/js.png" alt="JavaScript" />
+              <img src="img/react.png" alt="React JS" />
+            </div>
+            <div class="button-group">
+              <button>edit</button>
+              <button>delete</button>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img src="img/crud-mahasiswa.png" alt="CRUD Mahasiswa" />
+            </div>
+            <div class="card-title">
+              <h3>CRUD Mahasiswa</h3>
+              <small>Durasi : 3 Bulan</small>
+            </div>
+            <div class="card-body">
+              <p>
+                Dalam programming, CRUD merupakan singkatan dari Create Read
+                Update dan Delete. Yakni aplikasi yang berisi pengolahan data.
+                Biasanya CRUD butuh database sebagai media penyimpanan. Akan
+                tetapi untuk sementara ini app CRUD Mahasiswa lebih fokus ke
+                kode React, CRUD ini hanya disimpan di memory saja.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img src="img/landingpage.png" alt="#" />
+            </div>
+            <div class="card-title">
+              <h3>Landing Page</h3>
+              <small>Durasi : 1 Bulan</small>
+            </div>
+            <div class="card-body">
+              <p>
+                Landing Page sederhana yang berisikan informasi perusahaan untuk
+                menarik pelanggan. Untuk sementara ini data yang ada di dalam
+                landing page masih bersifat dummy, karena proyek ini merupakan
+                hasil belajar HTML CSS dan Bootstrap. Akan tetapi proyek ini
+                dapat dijadikan template apabila ada proyek serupa kedepannya.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+              <img src="img/younoob.png" alt="#" />
+            </div>
+            <div class="card-title">
+              <h3>You Noob</h3>
+              <small>Durasi : 2 Bulan</small>
+            </div>
+            <div class="card-body">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                voluptatibus fugiat, veniam magnam eos pariatur earum illo odit,
+                eius voluptas expedita. Ullam, repellendus inventore
+                exercitationem perferendis beatae ea enim ad, nemo tempora
+                ducimus sunt in, eaque illum eius quo necessitatibus non
+                delectus nam? Inventore, aliquam.
+              </p>
+            </div>
+          </div> -->
+        </div>
+      </section>
+    </main>
+    <script src="js/project.js"></script>
+  </body>
+</html>
