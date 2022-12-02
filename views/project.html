@@ -1,0 +1,275 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/bootstrap.css" />
+    <link
+      rel="stylesheet"
+      href="/static/icons/bootstrap-icons-1.10.2/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/static/icons/fontawesome-free/css/all.css" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="/static/img/logo-dumbways.png"
+      type="image/x-icon"
+    />
+    <title>Task 11 DumbWays - asidikrdn</title>
+  </head>
+  <body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg px-2 px-lg-5 py-3">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            src="/static/img/logo-dumbways.png"
+            alt="logo-dumbways"
+            id="logo"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 fw-bolder fs-5">
+            <li class="nav-item mx-3">
+              <a class="nav-link" aria-current="page" href="/">Home</a>
+            </li>
+            {{if eq .LoginState.IsLogin true}}
+            <li class="nav-item mx-3">
+              <a class="nav-link active" href="/project">Add Project</a>
+            </li>
+            {{end}}
+          </ul>
+          <ul
+            class="navbar-nav w-100 fw-bolder fs-5 d-lg-flex justify-content-end align-items-center d-block"
+          >
+            {{if eq .LoginState.IsLogin true}}
+            <li class="nav-item mx-3">
+              <small class="my-0 lead d-none d-lg-block">
+                Hello, {{.LoginState.UserName}}
+              </small>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/logout"> Logout </a>
+            </li>
+            {{else}}
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/register"> Register </a>
+            </li>
+            <li class="nav-item mx-3">
+              <a class="nav-link" href="/login"> Login </a>
+            </li>
+            {{end}}
+            <li class="nav-item mx-3">
+              <a
+                class="nav-link fs-6 btn btn-dark text-white py-2 px-3 rounded-3"
+                href="/contact"
+              >
+                Contact Me
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End of NavBar -->
+
+    <main>
+      <section id="project-form">
+        <div class="container my-4">
+          <h1 class="text-center py-3">ADD MY PROJECT</h1>
+          <div class="row">
+            <div class="col-10 offset-1 col-lg-6 offset-lg-3">
+              <form
+                id="contactForm"
+                class="w-100 mx-auto"
+                method="post"
+                enctype="multipart/form-data"
+                action="/add-project"
+              >
+                <div class="mb-3">
+                  <label for="projectName" class="form-label h4">
+                    Project Name
+                  </label>
+                  <input
+                    type="text"
+                    name="projectName"
+                    class="form-control"
+                    id="projectName"
+                    required
+                  />
+                </div>
+                <div class="row g-0 mb-3">
+                  <div class="col-12 col-md-6 pe-md-2 mb-3 mb-md-0">
+                    <label for="startDate" class="form-label h4 w-100">
+                      Start Date
+                    </label>
+                    <input
+                      type="date"
+                      name="startDate"
+                      class="form-control"
+                      id="startDate"
+                      required
+                    />
+                  </div>
+                  <div class="col-12 col-md-6 ps-md-2">
+                    <label for="endDate" class="form-label h4 w-100">
+                      End Date
+                    </label>
+                    <input
+                      type="date"
+                      name="endDate"
+                      class="form-control"
+                      id="endDate"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="projectDesc" class="form-label h4"
+                    >Description</label
+                  >
+                  <textarea
+                    name="projectDesc"
+                    id="projectDesc"
+                    class="form-control"
+                    cols="30"
+                    rows="10"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3 fs-5">
+                  <label class="form-label h4">Technologies</label>
+                  <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          name="html5"
+                          id="html5"
+                          value="html5"
+                          class="form-check-input"
+                        />
+                        <label for="html5" class="form-check-label"
+                          >HTML 5</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          name="css3"
+                          id="css3"
+                          value="css3"
+                          class="form-check-input"
+                        />
+                        <label for="css3" class="form-check-label">CSS 3</label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          name="js"
+                          id="js"
+                          value="js"
+                          class="form-check-input"
+                        />
+                        <label for="js" class="form-check-label">
+                          JavaScript
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          name="react"
+                          id="react"
+                          value="react"
+                          class="form-check-input"
+                        />
+                        <label for="react" class="form-check-label">
+                          React JS
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="projectImg" class="form-label h4"
+                    >Upload Image</label
+                  >
+                  <div class="d-none" id="preview-image"></div>
+                  <div class="input-group input-group-md mb-3">
+                    <input
+                      type="file"
+                      name="projectImg"
+                      id="projectImg"
+                      class="form-control"
+                      style="border-right: transparent"
+                    />
+                    <label
+                      class="input-group-text bg-white border-start-0"
+                      for="projectImg"
+                    >
+                      <img src="/static/img/file.png" alt="file" />
+                    </label>
+                  </div>
+                </div>
+                <div class="w-100 d-flex justify-content-end">
+                  <button type="submit" class="btn btn-dark fs-5">
+                    submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/js/bootstrap.bundle.js"></script>
+    <script>
+      // mengambil node input file
+      let projectImg = document.getElementById("projectImg");
+      // console.log(projectImg);
+
+      // mengambil node input file
+      let imgPreviewNode = document.getElementById("preview-image");
+      // console.log(imgNode);
+
+      // menambahkan fungsi pada event click milik element input file
+      projectImg.addEventListener("change", (e) => {
+        // mengambil file yang diupload pada input file
+        filesImg = e.target.files;
+
+        // Cek file upload apakah ada ? apakah formatnya sesuai (jpeg/png) ?
+        if (filesImg.length > 0) {
+          if (
+            filesImg[0].type == "image/png" ||
+            filesImg[0].type == "image/jpeg"
+          ) {
+            // jika semua syarat terpenuhi, buatlah urlnya lalu simpan di object dengan key img
+            let imgUrl = URL.createObjectURL(filesImg[0]);
+
+            // menampilkan preview image yang diupload
+            imgPreviewNode.className = "w-100";
+            imgPreviewNode.innerHTML = `<img
+              src=${imgUrl}
+              class="img-fluid rounded-3 mb-2 w-50 d-lg-block"
+            />`;
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
