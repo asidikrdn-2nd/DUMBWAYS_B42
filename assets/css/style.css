@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #e7e9e7;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ================= */
+/*      NavBar       */
+/* ----------------- */
+.navbar {
+  background-color: #f6f3f0;
+}
+.navbar-brand img {
+  width: 50px;
+}
+.nav-link button {
+  color: white;
+  border: none;
+  background-color: #0e262c;
+  padding: 10px 25px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+/* ----------------- */
+/*   End of NavBar   */
+/* ================= */
+
+/* ================= */
+/* Intro Card */
+/* ----------------- */
+#intro .container.card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 35%);
+}
+#intro .container.card .card {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 35%);
+}
+#intro .container.card .card .card-img img {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+/* ----------------- */
+/* End of Intro Card */
+/* ================= */
+
+/* ================= */
+/* Project List */
+/* ----------------- */
+#project-list {
+  background-color: #f8f8f6;
+}
+#project-list .card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 35%);
+}
+/* ----------------- */
+/* End of Project List */
+/* ================= */
+
+/* ================= */
+/* Contact Form */
+/* ----------------- */
+#contact-form .form-control,
+#contact-form .form-select {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 35%);
+}
+/* ----------------- */
+/* End of Contact Form */
+/* ================= */
+
+/* ================= */
+/* Project Form */
+/* ----------------- */
+#project-form form div > .form-control,
+#project-form .form-check-input {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 35%);
+}
+#project-form .input-group{
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 35%);
+}
+#project-form .input-group .form-control {
+  box-shadow: none;
+}
+/* ----------------- */
+/* End of Project Form */
+/* ================= */
+
+/* ================= */
+/* Project Display */
+/* ----------------- */
+/* ----------------- */
+/* End of Project Display */
+/* ================= */
