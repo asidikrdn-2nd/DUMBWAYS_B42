@@ -10,7 +10,7 @@ Kemudian buatlah fungsi **Add My Project** dengan menggunakan method **POST** un
 Berikut cara menjalankan aplikasi ini di komputer lokal :
 
 - Pastikan sudah menginstall `Go Compiler` dan `Git SCM` di komputer anda
-- Clone repository ini dengan menjalankan `git clone https://github.com/asidikrdn-2nd/dumbways-task_7` di terminal/cmd
+- Clone repository ini dengan menjalankan `git clone -b stage1-task7 https://github.com/asidikrdn/DUMBWAYS_B42 dumbways-task_7` di terminal/cmd
 - Masuk ke folder `dumbways-task_7`
 - Buka terminal dan jalankan perintah `go run main.go`
 
